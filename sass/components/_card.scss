@@ -1,6 +1,7 @@
 
 
 .card{
+  //FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective:150rem;
   position:relative;
@@ -13,6 +14,7 @@
     position:absolute;
     top:0;
     left:0;
+    overflow:hidden;
     width:100%;
     backface-visibility: hidden;
 
@@ -35,9 +37,98 @@
     }
   }
   &:hover &__side--front{
-    transform:rotateY(180deg);
+    transform:rotateY(-180deg);
   }
   &:hover &__side--back{
     transform:rotateY(0);
+  }
+
+  // Front side styling
+  &__picture{
+      background-size: cover;
+      height:23rem;
+      @include clip(0 0, 100% 0, 100% 80%,0 100%);
+      &--1{
+        @include blendbackground(screen,to right bottom, $color-secondary-light, $color-secondary-dark,'../img/nat-5.jpg');
+      }
+      &--2{
+        @include blendbackground(screen,to right bottom, $color-tertiary-light, $color-tertiary-dark,'../img/nat-5.jpg');
+      }
+      &--3{
+        @include blendbackground(screen,to right bottom, $color-primary-light, $color-primary-dark,'../img/nat-5.jpg');
+      }
+  }
+
+  &__heading{
+    font-size:2.5rem;
+    font-weight:300;
+    text-transform: uppercase;
+    color:$color-light;
+    position:absolute;
+    text-align: right;
+    top:10rem;
+    right:2rem;
+    width:50%;
+  }
+
+
+
+  &__heading-span{
+    padding:1rem 1.2rem;
+    @include crossBrowser(box-decoration-break,clone);
+    &--1{
+
+    }
+    &--2{
+      @include linearbackground(to right bottom, rgba($color-tertiary-light,.85), rgba($color-tertiary-dark,.85));
+    }
+    &--3{
+      @include linearbackground(to right bottom, rgba($color-primary-light,.85), rgba($color-primary-dark,.85));
+    }
+  }
+
+  &__detail{
+    ul{
+      list-style: none;
+      margin:0 auto;
+      padding:0;
+      width:80%;
+      li{
+        padding:1.2rem;
+        text-align:center;
+        font-size:1.5rem;
+        &:not(:last-child){
+          border-bottom:2px solid $color-grey-light;
+        }
+      }
+    }
+  }
+
+
+  // Back side styling
+  &__cta{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+
+
+  &__price-box{
+    text-align: center;
+    color:$color-light;
+    padding-bottom:2rem;
+  }
+
+
+  &__price-only{
+      font-size:1.4rem;
+      text-transform:uppercase;
+  }
+
+  &__price-value{
+    font-size:6rem;
+    font-weight:100;
+
   }
 }

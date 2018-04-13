@@ -1,0 +1,117 @@
+
+
+.story{
+  width:75%;
+  margin:0 auto;
+  box-shadow:0 3rem 6rem rgba($color-dark,.2);
+  background-color:rgba($color-light,0.4);
+  border-radius:3px;
+  padding:8rem 6rem;
+  font-size:$default-font-size;
+  transform:skewX(-12deg);
+
+  & > * {
+    transform:skewX(12deg);
+  }
+
+  &__shape{
+    width:15rem;
+    height:15rem;
+    float:left;
+    @include crossBrowser(shape-outside, circle(50% at 50% 50%));
+    @include crossBrowser(clip-path, circle(50% at 50% 50%));
+    transform:translateX(-3rem) skewX(12deg) translateY(-1.2rem);
+  }
+  &__img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transform:scale(1.4);
+    backface-visibility: hidden;
+    transition:all .3s ease-in;
+  }
+  &__caption{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,20%);
+    color:$color-light;
+    font-size:1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    opacity:0;
+    transition:all .3s ease-in;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+  &:hover &__img{
+    filter:blur(3px) brightness(80%);
+    transform:scale(1);
+    backface-visibility: hidden;
+  }
+}
+
+
+
+
+
+.story2{
+  background:rgba($color-light,.4);
+  width:75%;
+  padding:8rem 9rem;
+  margin:0 auto;
+  @extend .box-shadow1;
+  border-radius:3px;
+  transform:skewX(10deg);
+
+
+  & > * {
+      transform:skewX(-10deg);
+  }
+
+  &__shape{
+    float:left;
+    width:14rem;
+    height:14rem;
+    @include crossBrowser(shape-outside, circle(50% at 50% 50%));
+    @include crossBrowser(clip-path, circle(50% at 50% 50%));
+    transform:translate(-2rem,-1rem) skewX(-10deg);
+    position:relative;
+  }
+
+  &__img{
+    width:100%;
+    height:100%;
+    transform:scale(1.4);
+    transition: all .3s ease-in;
+    backface-visibility: hidden;
+  }
+
+  &__caption{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,20%);
+    font-size:1.8rem;
+    text-align:center;
+    color:$color-light;
+    opacity:0;
+    transition:all .3s ease-in;
+  }
+
+
+  &:hover &__caption{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+
+  &:hover &__img{
+    transform:scale(1);
+    filter:blur(3px);
+  }
+
+}

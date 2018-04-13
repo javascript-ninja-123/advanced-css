@@ -4,6 +4,15 @@
 }
 
 
+.heading--skew-animated{
+  transition:all .3s ease-out;
+  &:hover{
+    transform:skewY(2deg) skewX(10deg);
+    text-shadow: .5rem 1rem 2rem rgba($color-dark,.2);
+  }
+}
+
+
 .heading-primary {
   color:$color-light;
   backface-visibility: hidden;
@@ -59,15 +68,17 @@
   &--white{
     color:white;
   }
-  &--animated{
-    background-image:linear-gradient(to right,$color-light, rgba($color-dark,.4));
-    -webkit-background-clip: text;
-    color:transparent;
-    transition:all .3s ease-out;
-  }
-  &--animated:hover{
-    transform:skewY(2deg) skewX(10deg);
-  }
+}
+
+
+.heading-fourth{
+  font-size:3.5rem;
+  font-weight:700;
+  background-image:linear-gradient(to right, $color-tertiary-light, $color-tertiary-dark);
+  @include crossBrowser(background-clip,text);
+  color:transparent;
+  letter-spacing: 2px;
+  display: inline-block;
 }
 
 .paragraph{

@@ -35,3 +35,41 @@
   @extend .section-default;
   padding-bottom:50rem;
 }
+
+
+.section-tours2{
+  @include linearBackgroundImage(to right bottom,
+    rgba($color-primary,0.8),
+    rgba($color-primary-dark,0.8),
+    '../img/nat-4.jpg'
+    );
+  background-size: cover;
+  background-position: center;
+  padding:20rem 0;
+  margin-top:-20rem;
+  transform:skewY(7deg);
+  & > * {
+    transform:skewY(-7deg);
+  }
+}
+
+
+.section-story{
+  padding:25rem 0;
+  margin-top:-20vh;
+  position: relative;
+}
+
+.section-story2{
+    position: relative;
+      padding:25rem 0;
+}
+
+
+
+.section-booking{
+  padding:25rem 10rem;
+  @include linearbackground( to right bottom,
+    rgba($color-primary,0.8),
+    rgba($color-primary-dark,0.8));
+}

@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  clip-path:polygon(0 0,100% 0,100% 75vh, 0 100%);
+  @include clip(0 0, 100% 0, 100% 75vh,0 100%);
   position:relative;
   text-align: center;
 

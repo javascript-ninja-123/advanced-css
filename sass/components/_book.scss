@@ -1,0 +1,11 @@
+
+
+.book{
+  background-image:url(../img/nat-10.jpg);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:50rem;
+  border-radius:3px;
+  @extend .box-shadow1;
+}

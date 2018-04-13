@@ -9,6 +9,32 @@
 }
 
 
+
+
+
 @mixin linearbackground($direction, $color1,$color2){
     background-image:linear-gradient($direction, $color1, $color2);
+};
+
+
+@mixin linearBackgroundImage($direction,$color1,$color2,$image){
+  background-image:linear-gradient($direction,$color1,$color2),url($image);
+};
+
+@mixin blendbackground($mode,$direction,$color1,$color2,$background){
+  background-blend-mode: $mode;
+  background-image:linear-gradient($direction, $color1, $color2), url($background);
+}
+
+@mixin clip($top-left, $top-right, $bottom-right,$bottom-left){
+  -webkit-clip-path:polygon($top-left, $top-right, $bottom-right,$bottom-left);
+  clip-path:polygon($top-left, $top-right, $bottom-right,$bottom-left);
+}
+
+
+@mixin crossBrowser($property, $value){
+  -webkit-#{$property}:$value;
+  -moz-#{$property}:$value;
+  -ms-#{$property}:$value;
+  #{$property}:$value;
 }
